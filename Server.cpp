@@ -68,9 +68,10 @@ public:
 
 			std::string chatRoomString = data.ToString();
 			std::cout << chatRoomString << std::endl;
-			//chatRoomString = chatRoomString.substr(1, chatRoomString.size() - 1);
-			//chatRoomNum = std::stoi(chatRoomString);
-			chatRoomNum = 1;
+			chatRoomString = chatRoomString.substr(0, 1);
+			chatRoomNum = std::stoi(chatRoomString);
+			//chatRoomNum = 1;
+			std::cout << chatRoomNum << std::endl;
 			std::cout << "Current chat room number from socket.Read(): " << chatRoomNum << std::endl;
 
 			while(!terminate) {
@@ -246,7 +247,7 @@ int main(void) {
     int port = 3005;
 
 	// Admin sets value of number of chat rooms for the server.
-    int rooms = 20;
+    int rooms = 9;
 
     std::cout << "SE 3316 Server" << std::endl 
 		<<"Type done to quit the server..." << std::endl;
